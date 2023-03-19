@@ -1,0 +1,40 @@
+@model IEnumerable<NetProject.Models.Project>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="mx-auto w-75">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Url)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc)
+                    </td>
+                    <td>
+                        <a href="@Html.DisplayFor(modelItem => item.Url)">Länk till webbplats/GitHub</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
